@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/home/kierasgriffiths/Historical TV Drama Ratings" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="565"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="0,10:Browsables"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">-- =====================================
+-- Title: Ratings of Historical TV Dramas (Week 2A Assignment)
+
+-- Author: Kiera Griffiths 
+
+-- Approach:
+-- I chose six dramatic TV series set in historical periods and asked five participants (A to E) to rate how they liked each
+-- show on a scale of 1 to 5 (1 being the lowest).The data will be stored in three tables (Historical TV Dramas, 
+-- Participants, Ratings) in SQLite then loaded into R, to combine the tables and analyze the average ratings per show. For
+-- instances where a participant did not watch a show, the rating will be missing and presented as &quot;NULL&quot; in SQL and &quot;NA&quot; 
+-- in R. This means shows with fewer viewers may have averages more sensitive to each viewers rating but not necessarily 
+-- higher ratings.
+-- =====================================
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
