@@ -1,0 +1,33 @@
+---
+title: "Historical TV Dramas"
+author: "Kiera Griffiths"
+format: html
+editor: visual
+---
+
+## Approach 
+Week 2A assignment developed in SQL transferred to R.
+
+library(DBI)
+library(RSQLite)
+library(dplyr)
+
+con <- dbConnect(SQLite(), "historical_tv_dramas_ratings.db")
+
+shows <- dbReadTable(con, "shows")
+participants <- dbReadTable(con, "participants")
+ratings <- dbReadTable(con, "ratings")
+
+full_data <- participants %>%
+  tidyr::crossing(shows) %>%
+  left_join(ratings,
+            by = c("participant_id", "show_id"))
+
+average_ratings <- full_data %>%
+  group_by(title) %>%
+  summarise(
+    average_rating = mean(rating, na.rm = TRUE),
+    number_of_ratings = sum(!is.na(rating))
+  )
+
+
